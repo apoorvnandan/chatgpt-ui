@@ -1,4 +1,4 @@
-Tiny chat gpt UI because the official one keeps going every once in a while. 
+Tiny chat gpt UI because the official one keeps getting stuck every once in a while. 
 
 - Add your OPENAI KEY
 - Chat
