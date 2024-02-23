@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"
+        integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/uno.global.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.min.css">
+<style>
+    * {
+            box-sizing: border-box;
+            font-family: monospace;
+            white-space: pre-wrap;
+            border-collapse: collapse;
+        }
+</style>
+
+</head>
+
+<body class="mx-auto max-w-2xl w-full px-4">
+    <button id='download' class='absolute top-4 right-4'>Download</button>
+    <div id='convo'></div>
+    <div id="running"></div>
+    <textarea id='msg' class="rounded px-6 py-2 border border-neutral-400 w-full"></textarea>
+</body>
+<script src="app.js"></script>
+
+</html>
