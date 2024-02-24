@@ -29,8 +29,8 @@ async function hitOpenaiApi(conversation) {
         'Content-Type': 'application/json'
     };
     const jsonData = {
-        //'model': 'gpt-4-1106-preview',
-        'model': 'gpt-3.5-turbo-0125',
+        'model': 'gpt-4-1106-preview',
+        //'model': 'gpt-3.5-turbo-0125',
         'seed': 1123,
         'messages': conversation
     };
