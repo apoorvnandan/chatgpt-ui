@@ -57,13 +57,21 @@ async function hitOpenaiApi(conversation) {
 
 const convo = new State([])
 const running = new State(false)
+
+function escapeHtml(unsafeText) {
+    const div = document.createElement('div');
+    div.textContent = unsafeText;
+    return div.innerHTML;
+}
+
 convo.attach(()=>{
+    const convoElement = document.getElementById('convo')
     let h = ''
     for (let m of convo.value) {
-        h += `${m.role}: ${m.content}`
-        h += '<div class="h-1 w-full my-4 border-t border-neutral-400"></div>'
+        h += `${m.role}: ${m.content}\n\n`
     }
-    replaceHTML(document.getElementById('convo'), h)
+    const escaped = escapeHtml(h)
+    replaceHTML(convoElement, escaped)
 })
 
 running.attach(()=>{
@@ -103,6 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const msg = inp.value
             convo.set([...convo.value, {role: 'user', content: msg}])
             inp.value = ''
+            const inputEvent = new Event('input')
+            inp.dispatchEvent(inputEvent)
             running.set(true)
             const completion = await hitOpenaiApi(convo.value)
             running.set(false)
